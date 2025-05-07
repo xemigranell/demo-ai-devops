@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "Mock deployment to Kubernetes cluster"
 
-      - name: Deploy manifest if valid
+      - name: Deploy manifest if NOT valid
         if: steps.validate_manifest.outputs.validation_result == 'The manifest is not valid'
         run: |
           echo "ERROR: manifest is not valid!"
