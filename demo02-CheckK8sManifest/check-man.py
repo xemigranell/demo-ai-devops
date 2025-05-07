@@ -2,6 +2,7 @@ import openai
 import os
 import argparse
 import logging
+from openai.types.chat.chat_completion import ChatCompletion
 
 def load_api_key():
     """
@@ -23,7 +24,7 @@ def validate_kubernetes_manifest(manifest_path, model):
             manifest_content = file.read()
         
         # Send the manifest for validation
-        response = openai.ChatCompletion.create(
+        response: ChatCompletion = openai.chat.completions.create(
             model=model,
             messages=[
                 {"role": "system", "content": """You are a Kubernetes Manifest validation expert. 

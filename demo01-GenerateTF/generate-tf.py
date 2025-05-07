@@ -2,6 +2,7 @@ import openai
 import os
 import argparse
 import logging
+from openai.types.chat.chat_completion import ChatCompletion
 
 def load_api_key():
     """
@@ -21,7 +22,7 @@ def generate_terraform_spec(prompt: str, model: str = "gpt-4o-mini") -> str:
 
     logging.info("Sending request to OpenAI API...")
     try:
-        response = openai.ChatCompletion.create(
+        response: ChatCompletion = openai.chat.completions.create(
             model=model,
             messages=[
                 {"role": "system", "content": """You are a Terraform script generator that receives a specification of a terraform
