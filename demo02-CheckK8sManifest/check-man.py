@@ -33,8 +33,10 @@ def validate_kubernetes_manifest(manifest_path, model):
         )
         
         # Extract and print the validation result
-        validation_result = response.choices[0].message.content
-        print(validation_result)
+        #validation_result = response.choices[0].message.content
+        #print(validation_result)
+        validation_result = response.choices[0].message.content.strip()
+        print(f"::set-output name=validation_result::{validation_result}")
         return validation_result
     except Exception as e:
         print(f"An error occurred: {e}")
