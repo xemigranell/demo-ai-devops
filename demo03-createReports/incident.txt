@@ -1,0 +1,13 @@
+Incident: High CPU usage detected on server PRODUCTION-DB01 at 1:30 PM.
+Logs:
+- CPU usage spiked to 97% for over 20 minutes.
+- Slow query logs indicate delays in database response times.
+- Application error logs show timeouts for multiple endpoints.
+
+Initial Actions Taken:
+1. Restarted the database service at 1:45 PM.
+2. Scaled up the application nodes by 3 instances.
+3. Cleared old database cache.
+
+Current Status:
+Service is operational, but query performance remains degraded.

@@ -58,7 +58,7 @@ def save_to_file(content: str, output_file: str):
 
 def main():
     """
-    Main function to handle command-line arguments and run the automation.
+    Main function to handle command-line arguments.
     """
     parser = argparse.ArgumentParser(description="Generate Terraform configuration using OpenAI GPT.")
     parser.add_argument(

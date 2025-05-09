@@ -15,6 +15,10 @@ def load_api_key():
     return api_key
 
 def validate_kubernetes_manifest(manifest_path, model):
+    """
+    Validating Kubernetes manifest using OpenAI's API.
+    """
+
     openai.api_key = load_api_key()
 
     logging.info("Sending request to OpenAI API...")
@@ -33,14 +37,13 @@ def validate_kubernetes_manifest(manifest_path, model):
             ]
         )
         
-        # Extract and print the validation result
-        #validation_result = response.choices[0].message.content
-        #print(validation_result)
         validation_result = response.choices[0].message.content.strip()
         print(f"::set-output name=validation_result::{validation_result}")
+        logging.info("Kubernetes manifest validated successfully.")
         return validation_result
     except Exception as e:
-        print(f"An error occurred: {e}")
+        logging.error(f"Error validating Kubernetes manifest: {e}")
+        raise
 
 def main():
     """
