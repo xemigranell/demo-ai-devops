@@ -1,0 +1,8 @@
+Base URL: https://api.example.com
+
+Endpoints:
+1. GET /users - Retrieves a list of users.
+2. POST /users - Creates a new user.
+   - Payload: {"name": "Pepe Garcia", "email": "pepe@example.com"}
+3. GET /users/{id} - Retrieves a user by ID.
+4. DELETE /users/{id} - Deletes a user by ID.
