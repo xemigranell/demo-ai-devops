@@ -17,6 +17,7 @@ To leverage the powerful capabilities of OpenAI's models in your DevOps applicat
 
 Remember to keep your API key secure and never share it publicly or include it directly in your codebase. Instead, use environment variables or a secure vault to manage your keys.
 
+### Steps
 
 1. Clone the repository:
 
