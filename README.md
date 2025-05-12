@@ -39,7 +39,12 @@ This demo generates Terraform configuration files based on a given specification
 
 Run the script with the required arguments:
 ```sh
-python generate-tf.py -p "your terraform specification" -o "output-file.tf"
+python generate-tf.py -f "tf-specification-file" -o "output-file.tf"
+```
+
+You can also use the prompt to pass the terraform specification:
+```sh
+python generate-tf-prompt.py -p "your terraform specification" -o "output-file.tf"
 ```
 
 ### Demo 02: Check Validity of Kubernetes Manifest
