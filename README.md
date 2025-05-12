@@ -23,7 +23,7 @@ Remember to keep your API key secure and never share it publicly or include it d
 
 2. Install the required Python packages:
     ```sh
-    pip install openai argparse logging
+    pip install openai
     ```
 
 3. Set your OpenAI API key as an environment variable:
