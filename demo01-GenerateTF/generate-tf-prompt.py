@@ -14,7 +14,7 @@ def load_api_key():
         raise ValueError("OpenAI API key is missing. Set the 'OPENAI_API_KEY' environment variable.")
     return api_key
 
-def generate_terraform_spec(spec_file,model):
+def generate_terraform_spec(prompt: str, model: str = "gpt-4o-mini") -> str:
     """
     Generate Terraform configuration using OpenAI's API.
     """
@@ -62,7 +62,7 @@ def main():
     """
     parser = argparse.ArgumentParser(description="Generate Terraform configuration using OpenAI GPT.")
     parser.add_argument(
-        "-f", "--file", type=str, required=True, help="Specification for the Terraform configuration."
+        "-p", "--prompt", type=str, required=True, help="Specification for the Terraform configuration."
     )
     parser.add_argument(
         "-o", "--output", type=str, default="main.tf", help="Output file name (default: main.tf)."
@@ -73,7 +73,7 @@ def main():
     args = parser.parse_args()
 
     # Generate Terraform configuration
-    terraform_config = generate_terraform_spec(spec_file=args.file, model=args.model)
+    terraform_config = generate_terraform_spec(prompt=args.prompt, model=args.model)
 
     # Save to file
     save_to_file(content=terraform_config, output_file=args.output)

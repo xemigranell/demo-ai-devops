@@ -1,0 +1,8 @@
+Generate a Terraform configuration script compatible with Terraform 1.5+ and azurerm version <4 to provision an Azure VM with the following specifications:
+- SKU: `Standard_B1s`
+- Region: `westeurope`
+- Resource group: `rg001`
+- Image: `Ubuntu 24.04 LTS`
+- ssh key: `my-key-pair` (assume this key pair already exists and is stored in keyvault kvt001 in the same resource group in the `westeurope` region)
+- Network security group: Configure a network security group that allows inbound SSH traffic on port 22 from any IP address (CIDR block 0.0.0.0/0). Ensure the output includes the VM's public IP address.
+Ensure the output includes the instance's public IP address. Provide the code only, without any additional explanation or comments.
