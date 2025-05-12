@@ -29,7 +29,7 @@ jobs:
           python demo04-createTests/create-test.py -f demo04-createTests/api_spec.txt
 
       - name: Upload Tests
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: tests
           path: test_api_server.py

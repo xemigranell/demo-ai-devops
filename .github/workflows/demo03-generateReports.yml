@@ -29,7 +29,7 @@ jobs:
           python demo03-createReports/create-report.py -f demo03-createReports/incident.txt
 
       - name: Upload Reports
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: reports
           path: incident_documents
