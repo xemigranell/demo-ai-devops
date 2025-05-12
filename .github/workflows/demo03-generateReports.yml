@@ -22,15 +22,15 @@ jobs:
           pip install openai
 
       - name: Run the generation script
-        id: generate_tf
+        id: generate_reports
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python demo01-GenerateTF/generate-tf.py -f demo01-GenerateTF/tf-spec.txt
+          python demo03-createReports/create-report.py -f demo03-createReports/incident.txt
 
-      - name: Upload Terraform configuration
+      - name: Upload Reports
         uses: actions/upload-artifact@v2
         with:
-          name: terraform-config
-          path: main.tf
+          name: reports
+          path: incident_documents
       

@@ -22,15 +22,15 @@ jobs:
           pip install openai
 
       - name: Run the generation script
-        id: generate_tf
+        id: generate_tests
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python demo01-GenerateTF/generate-tf.py -f demo01-GenerateTF/tf-spec.txt
+          python demo04-createTests/create-test.py -f demo04-createTests/api_spec.txt
 
-      - name: Upload Terraform configuration
+      - name: Upload Tests
         uses: actions/upload-artifact@v2
         with:
-          name: terraform-config
-          path: main.tf
+          name: tests
+          path: test_api_server.py
       
