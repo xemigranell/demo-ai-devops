@@ -1,4 +1,4 @@
-name: Generate Terraform File
+name: Generate Tests
 
 on:
   workflow_dispatch:
