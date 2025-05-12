@@ -28,7 +28,7 @@ def generate_terraform_spec(spec_file,model):
                 {"role": "system", "content": """You are a Terraform script generator that receives a specification of a terraform
                   template. Do not wrap the code in backticks or any other formatting. It needs all the components in a typical terraform main file.
                   Do not include Markdown, explanations, or commentary—only the raw tf code."""},
-                {"role": "user", "content": prompt}
+                {"role": "user", "content": spec_file}
             ]
         )
 
