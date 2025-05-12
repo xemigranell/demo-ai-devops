@@ -1,8 +1,20 @@
-Generate a Terraform configuration script compatible with Terraform 1.5+ and azurerm version <4 to provision an Azure VM with the following specifications:
-- SKU: `Standard_B1s`
-- Region: `westeurope`
-- Resource group: `rg001`
-- Image: `Ubuntu 24.04 LTS`
-- ssh key: `my-key-pair` (assume this key pair already exists and is stored in keyvault kvt001 in the same resource group in the `westeurope` region)
-- Network security group: Configure a network security group that allows inbound SSH traffic on port 22 from any IP address (CIDR block 0.0.0.0/0). Ensure the output includes the VM's public IP address.
+Generate a Terraform configuration script compatible with Terraform 1.5+ to provision an AWS EC2 instance with the following specifications:
+- Instance type: `t3.micro`
+- AWS region: `us-east-1`
+- AMI: `Amazon Linux 2023` (ensure the AMI ID is specific to the `us-east-1` region and up-to-date)
+- Key pair: `my-key-pair` (assume this key pair already exists in the `us-east-1` region)
+- Security group: Configure a security group that allows inbound SSH traffic on port 22 from any IP address (CIDR block `0.0.0.0/0`).
+
 Ensure the output includes the instance's public IP address. Provide the code only, without any additional explanation or comments.
+Use the following example of Terraform syntax as a guide for formatting:
+```hcl
+resource "aws_s3_bucket" "example" {
+  bucket = "my-example-bucket"
+  acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+```
